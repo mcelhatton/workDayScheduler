@@ -2,9 +2,6 @@
 var timeNow = moment().format('MMMM Do YYYY, h:mm:ss a');
 $('#currentDay').replaceWith(timeNow);
 
-console.log(timeNow);
-
-
 // save textarea to local storage function
 $('.saveBtn').on('click', function handleClick(event){
 
@@ -15,7 +12,7 @@ $('.saveBtn').on('click', function handleClick(event){
 
 });
 
-// load schedule from local storage loop 
+// load schedule from local storage loop and check time and set cSS
 for (var i = 8; i < 18; i++) {
   $(`#hour${i}`).val(localStorage.getItem(`hour${i}`));
   var currentHour = moment().hour();
